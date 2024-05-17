@@ -181,8 +181,14 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 20px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #cecfd1;
+      padding: .25rem 0;
+
+      p {
+          margin: 0 0 10px;
+      }
   }
 }
 
@@ -305,7 +311,19 @@
   }
 
   li {
-    white-space: nowrap;
+    &.custom-links {
+        border-top: 1px solid #cecfd1;
+        margin: .5rem 0;
+        padding: .25rem 0;
+
+        .size1 {
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+        .size2 {
+            font-weight: bold;
+        }
+    }
   }
 
   a {

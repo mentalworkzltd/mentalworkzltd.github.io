@@ -19,6 +19,19 @@
                 {% if link.description %} title="{{ link.description }}"{% endif %}
                 {% if link.target %} target="{{ link.target }}"{% endif %}
               >{{ link.title }}</a>
+
+                <ul class="child-links">
+                    {%- for childlink in link.children -%}
+                    <li class="masthead__menu-item">
+                        <a
+                                href="{{ childlink.url | relative_url }}"
+                                {% if childlink.description %} title="{{ childlink.description }}"{% endif %}
+                                {% if childlink.target %} target="{{ childlink.target }}"{% endif %}
+                        >{{ childlink.title }}</a>
+                    </li>
+                    {%- endfor -%}
+                </ul>
+
             </li>
           {%- endfor -%}
         </ul>
